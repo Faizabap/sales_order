@@ -1,0 +1,17 @@
+<mvc:View controllerName="salesorder.controller.sales_details"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:tnt="sap.tnt"
+	height="100%" 
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+   
+
+		<FlexBox id ="f1" direction="Column" alignItems="Start" class="sapUiMediumMargin">
+				<Text id="t1" text="{salesitem>/10/DocNumber}" class="sapUiTinyMarginEnd"/>
+				<Text id="t2" text="Test2" class="sapUiTinyMarginEnd"/>
+				<!-- <tnt:InfoLabel id="il10" text="display only in form" colorScheme="1" displayOnly= "true" /> -->
+		</FlexBox>
+    </Page>
+</mvc:View>
