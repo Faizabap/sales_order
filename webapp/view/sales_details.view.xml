@@ -6,12 +6,85 @@
 	height="100%" 
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-   
+   <SplitApp
+		id="split_app"
+		initialDetail="detail"
+		initialMaster="master">
+	   <masterPages>
+                <Page
+                    id="sales_master"
+                    title="Document Number"
+                    backgroundDesign="List">
+                    <List 
+                        id="master_list" 
+                        items="{ 
+                        path: 'saleshead>/',
+                        length: 50 }"
+                        growing="true"
+                        growingThreshold="15"
+                         > <!-- Binding path to 'salesitem' -->
+                        
+                        <StandardListItem 
+                            id="item_id" 
+                            title="{saleshead>DocNumber}" 
+                            type="Navigation" 
+                            press=".onPressGoToMaster" />
+                    </List>
+                </Page>
+            </masterPages>
 
-		<FlexBox id ="f1" direction="Column" alignItems="Start" class="sapUiMediumMargin">
-				<Text id="t1" text="{salesitem>/10/DocNumber}" class="sapUiTinyMarginEnd"/>
-				<Text id="t2" text="Test2" class="sapUiTinyMarginEnd"/>
-				<!-- <tnt:InfoLabel id="il10" text="display only in form" colorScheme="1" displayOnly= "true" /> -->
-		</FlexBox>
+<detailPages>
+   <Page
+                    id="sales_detail"
+                    title="Sales Details"
+                    backgroundDesign="List">
+
+         	<Table id="idItemsTable"
+		inset="true"
+		items="{
+			path: 'salesitems>/',
+			sorter: {
+				path: 'Material'
+			}
+		}">
+		 <columns>
+            <!-- <Column id="col_Matlist">
+                <Text id="coltxt_Matlist" text="Material List" />
+            </Column> -->
+            <Column id="colMat">
+                <Text id="coltxt_Mat" text="Material" />
+            </Column>
+            <Column id="col_itmnum">
+                <Text id="coltxt_itmnum" text="Item Number" />
+            </Column>
+            <Column id="col_qty">
+                <Text id="coltxt_qty" text="Quantity" />
+            </Column>
+            <Column id="col_amt">
+                <Text id="coltxt_amt" text="Amount" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem id="id_ItemCMaterial" vAlign="Middle">
+                <cells>
+                    <Text 
+                        id="idText_Material"
+                        text="{salesitems>Material}" />
+                    <Text 
+                        id="idText_ItmNum"
+                        text="{salesitems>ItmNumber}" />
+                    <Text 
+                        id="idText_qty"
+                        text="{salesitems>ComponQty}" />
+                    <Text 
+                        id="idText_amt"
+                        text="{salesitems>NetValue}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+        </Table>
+   </Page>
+</detailPages>		
+		</SplitApp>
     </Page>
 </mvc:View>
