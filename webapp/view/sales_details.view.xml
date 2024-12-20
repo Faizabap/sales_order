@@ -21,7 +21,9 @@
                         path: 'saleshead>/',
                         length: 50 }"
                         growing="true"
-                        growingThreshold="15"
+                        growingThreshold="15
+                        
+                        "
                          > <!-- Binding path to 'salesitem' -->
                         
                         <StandardListItem 
@@ -32,13 +34,11 @@
                     </List>
                 </Page>
             </masterPages>
-
 <detailPages>
    <Page
                     id="sales_detail"
                     title="Sales Details"
                     backgroundDesign="List">
-
          	<Table id="idItemsTable"
 		inset="true"
 		items="{
