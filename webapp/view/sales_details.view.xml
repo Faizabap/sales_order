@@ -28,12 +28,8 @@
                         path: 'saleshead>/',
                         length: 50 }"
                         growing="true"
-                        growingThreshold="15
-                        
-                        "
+                        growingThreshold="15"
                          > 
-                         
-                         
                         <StandardListItem 
                             id="item_id" 
                             title="{saleshead>DocNumber}" 
