@@ -6,6 +6,13 @@
 	height="100%" 
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+  
+  
+  
+  
+  
+  
+  
    <SplitApp
 		id="split_app"
 		initialDetail="detail"
@@ -24,8 +31,9 @@
                         growingThreshold="15
                         
                         "
-                         > <!-- Binding path to 'salesitem' -->
-                        
+                         > 
+                         
+                         
                         <StandardListItem 
                             id="item_id" 
                             title="{saleshead>DocNumber}" 
